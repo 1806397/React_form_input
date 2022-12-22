@@ -18,15 +18,13 @@ const SimpleInput = (props) => {
     reset: resetEmailInput,
   } = useInput((value) => value.includes("@"));
   const [formIsValid, setFormIsValid] = useState(false);
-
-  const EmailInputIsInvalid = !enteredEmailIsValid && enteredEmailIsValid;
   useEffect(() => {
-    if (enteredNameIsValid) {
+    if (enteredNameIsValid && enteredEmailIsValid) {
       setFormIsValid(true);
     } else {
       setFormIsValid(false);
     }
-  }, [enteredNameIsValid]);
+  }, [enteredNameIsValid, enteredEmailIsValid, setFormIsValid]);
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();

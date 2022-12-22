@@ -9,7 +9,7 @@ const useInput = (validateValue) => {
   //   return value.trim!==""
   // }
 
-  const hasError = !enteredValue && IsTouched;
+  const hasError = !valueIsValid && IsTouched;
   const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
   };
